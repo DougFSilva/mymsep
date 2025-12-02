@@ -26,7 +26,8 @@ import lombok.ToString;
 @Getter
 @Setter
 @EqualsAndHashCode
-@ToString class CriterioDeAvaliacao {
+@ToString 
+public class CriterioDeAvaliacao {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
