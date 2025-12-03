@@ -76,5 +76,19 @@ public class SituacaoDeAprendizagem {
 	        inverseJoinColumns = @JoinColumn(name = "conhecimento_id")
 	    )
 	private List<Conhecimento> conhecimentos;
+
+	public SituacaoDeAprendizagem(PlanoDeEnsino planoDeEnsino, String contexto, String desafio,
+			String resultadoEsperado, LocalDate dataInicio, LocalDate dataFim, int cargaHoraria,
+			EstrategiaDesafiadora estrategiaDesafiadora) {
+		this.planoDeEnsino = planoDeEnsino;
+		this.contexto = contexto;
+		this.desafio = desafio;
+		this.resultadoEsperado = resultadoEsperado;
+		this.dataInicio = dataInicio;
+		this.dataFim = dataFim;
+		this.cargaHoraria = cargaHoraria;
+		this.estrategiaDesafiadora = estrategiaDesafiadora;
+	}
+	
 	
 }
