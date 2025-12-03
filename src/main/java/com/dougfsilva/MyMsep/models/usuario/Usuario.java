@@ -35,7 +35,7 @@ public class Usuario implements UserDetails{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long ID;
+	private Long id;
 	
 	@Column(nullable = false)
 	private String nome;
@@ -63,7 +63,7 @@ public class Usuario implements UserDetails{
 	}
 	
 	public String infoParaLog() {
-		return String.format("(ID: #%d) %s", this.ID, this.nome);
+		return String.format("(ID: #%d) %s", this.id, this.nome);
 	}
 	
 	@Override
