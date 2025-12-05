@@ -11,7 +11,7 @@ import lombok.RequiredArgsConstructor;
 
 @Service
 @RequiredArgsConstructor
-public class DeletarCurso {
+public class DeletaCurso {
 
 	private final CursoRepository cursoRepository;
 	private final TurmaRepository turmaRepository;

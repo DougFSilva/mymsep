@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.dougfsilva.MyMsep.exceptions.ObjetoNaoEncontradoException;
 import com.dougfsilva.MyMsep.models.PlanoDeEnsino;
+import com.dougfsilva.MyMsep.models.Turma;
 
 public interface PlanoDeEnsinoRepository extends JpaRepository<PlanoDeEnsino, Long> {
 	
@@ -15,4 +16,6 @@ public interface PlanoDeEnsinoRepository extends JpaRepository<PlanoDeEnsino, Lo
 	}
 
 	Page<PlanoDeEnsino> findAll(Pageable paginacao);
+	
+	boolean existsByTurma(Turma turma);
 }

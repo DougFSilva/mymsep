@@ -14,6 +14,8 @@ public interface TurmaRepository extends JpaRepository<Turma, Long> {
 		return findById(id).orElseThrow(
 				() -> new ObjetoNaoEncontradoException(String.format("Turma com id %d não encontrado!", id)));
 	}
+	
+	Page<Turma> findByCurso(Curso curso, Pageable paginacao);
 
 	Page<Turma> findAll(Pageable paginacao);
 	

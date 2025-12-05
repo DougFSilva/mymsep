@@ -10,7 +10,7 @@ import lombok.RequiredArgsConstructor;
 
 @Service
 @RequiredArgsConstructor
-public class CriarCurso {
+public class CriaCurso {
 
 	private final CursoRepository cursoRepository;
 	
