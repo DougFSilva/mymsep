@@ -16,11 +16,15 @@ import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "situacoes_de_aprendizagem")
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class SituacaoDeAprendizagem {
 
 	@Id

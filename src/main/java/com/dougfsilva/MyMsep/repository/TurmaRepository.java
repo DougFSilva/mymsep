@@ -5,6 +5,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.dougfsilva.MyMsep.exceptions.ObjetoNaoEncontradoException;
+import com.dougfsilva.MyMsep.models.Curso;
 import com.dougfsilva.MyMsep.models.Turma;
 
 public interface TurmaRepository extends JpaRepository<Turma, Long> {
@@ -15,5 +16,7 @@ public interface TurmaRepository extends JpaRepository<Turma, Long> {
 	}
 
 	Page<Turma> findAll(Pageable paginacao);
-
+	
+	boolean existsByCurso(Curso curso);
+	
 }
