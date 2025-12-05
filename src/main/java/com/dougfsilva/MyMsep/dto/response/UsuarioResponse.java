@@ -1,9 +1,9 @@
-package com.dougfsilva.MyMsep.dto;
+package com.dougfsilva.MyMsep.dto.response;
 
 import lombok.Getter;
 
 @Getter
-public class UsuarioDto {
+public class UsuarioResponse {
 
 	private Long id;
 	private String nome;

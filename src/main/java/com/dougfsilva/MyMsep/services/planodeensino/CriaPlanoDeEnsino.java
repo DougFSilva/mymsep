@@ -2,7 +2,7 @@ package com.dougfsilva.MyMsep.services.planodeensino;
 
 import org.springframework.stereotype.Service;
 
-import com.dougfsilva.MyMsep.dto.PlanoDeEnsinoForm;
+import com.dougfsilva.MyMsep.dto.form.PlanoDeEnsinoForm;
 import com.dougfsilva.MyMsep.models.PlanoDeEnsino;
 import com.dougfsilva.MyMsep.models.usuario.Usuario;
 import com.dougfsilva.MyMsep.repository.PlanoDeEnsinoRepository;

@@ -1,12 +1,9 @@
 package com.dougfsilva.MyMsep.models;
 
-import com.dougfsilva.MyMsep.models.enums.AvaliacaoCriterio;
-import com.dougfsilva.MyMsep.models.enums.TipoCriterio;
+import java.time.LocalDate;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -15,26 +12,23 @@ import jakarta.persistence.Table;
 import lombok.Data;
 
 @Entity
-@Table(name = "criterios_de_avaliacao")
+@Table(name = "turmas")
 @Data
-public class CriterioDeAvaliacao {
+public class Turma {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long Id;
 	
 	@ManyToOne
-	private Capacidade capacidade;
-	
-	@Enumerated(EnumType.STRING)
-	@Column(nullable = false)
-	private TipoCriterio tipoCriterio;
+	private Curso curso;
 	
 	@Column(nullable = false)
-	private String descricao;
+	private String codigo;
 	
-	@Enumerated(EnumType.STRING)
 	@Column(nullable = false)
-	private AvaliacaoCriterio avaliacao;
+	private String numero;
+	
+	private LocalDate dataCriacao;
 	
 }

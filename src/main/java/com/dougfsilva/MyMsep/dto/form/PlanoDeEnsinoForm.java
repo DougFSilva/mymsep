@@ -1,4 +1,4 @@
-package com.dougfsilva.MyMsep.dto;
+package com.dougfsilva.MyMsep.dto.form;
 
 import java.time.LocalDate;
 

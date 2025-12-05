@@ -1,11 +1,11 @@
-package com.dougfsilva.MyMsep.dto;
+package com.dougfsilva.MyMsep.dto.response;
 
 import java.time.LocalDate;
 
 import lombok.Getter;
 
 @Getter
-public class PlanoDeEnsinoDto {
+public class PlanoDeEnsinoResponse {
 
 	private Long id;
 	private String objetivo;
@@ -16,6 +16,6 @@ public class PlanoDeEnsinoDto {
 	private int cargaHoraria;
 	private LocalDate dataInicio;
 	private LocalDate dataFim;
-	private UsuarioDto proprietario;
+	private UsuarioResponse proprietario;
 
 }

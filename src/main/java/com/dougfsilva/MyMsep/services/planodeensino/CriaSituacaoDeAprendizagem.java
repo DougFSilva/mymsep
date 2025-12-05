@@ -2,7 +2,7 @@ package com.dougfsilva.MyMsep.services.planodeensino;
 
 import org.springframework.stereotype.Service;
 
-import com.dougfsilva.MyMsep.dto.SituacaoDeAprendizagemForm;
+import com.dougfsilva.MyMsep.dto.form.SituacaoDeAprendizagemForm;
 import com.dougfsilva.MyMsep.models.PlanoDeEnsino;
 import com.dougfsilva.MyMsep.models.SituacaoDeAprendizagem;
 import com.dougfsilva.MyMsep.repository.PlanoDeEnsinoRepository;

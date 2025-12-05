@@ -9,15 +9,20 @@ import jakarta.persistence.Table;
 import lombok.Data;
 
 @Entity
-@Table(name = "capacidades")
+@Table(name = "cursos")
 @Data
-public class Capacidade {
+public class Curso {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long Id;
 	
 	@Column(nullable = false)
-	private String titulo;
+	private String eixoTecnologico;
 	
+	@Column(nullable = false)
+	private String habilitacao;
+	
+	@Column(nullable = false)
+	private int cargaHoraria;
 }

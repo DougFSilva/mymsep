@@ -4,18 +4,18 @@ import java.util.List;
 
 import org.mapstruct.Mapper;
 
-import com.dougfsilva.MyMsep.dto.PlanoDeEnsinoDto;
+import com.dougfsilva.MyMsep.dto.response.PlanoDeEnsinoResponse;
 import com.dougfsilva.MyMsep.models.PlanoDeEnsino;
 
 @Mapper(componentModel = "spring")
 public interface PlanoDeEnsinoMapper {
 
-	PlanoDeEnsinoDto toDto(PlanoDeEnsino planoDeEnsino);
+	PlanoDeEnsinoResponse toDto(PlanoDeEnsino planoDeEnsino);
 
-	PlanoDeEnsino toPlanoDeEnsino(PlanoDeEnsinoDto dto);
+	PlanoDeEnsino toPlanoDeEnsino(PlanoDeEnsinoResponse dto);
 
-	List<PlanoDeEnsinoDto> toDto(List<PlanoDeEnsino> planosDeEnsino);
+	List<PlanoDeEnsinoResponse> toDto(List<PlanoDeEnsino> planosDeEnsino);
 
-	List<PlanoDeEnsino> toPlanosDeEnsino(List<PlanoDeEnsinoDto> planosDeEnsinoDto);
+	List<PlanoDeEnsino> toPlanosDeEnsino(List<PlanoDeEnsinoResponse> planosDeEnsinoDto);
 
 }

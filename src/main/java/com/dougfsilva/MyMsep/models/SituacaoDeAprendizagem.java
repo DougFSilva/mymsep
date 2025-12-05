@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.dougfsilva.MyMsep.models.enums.EstrategiaDesafiadora;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -12,31 +13,20 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.JoinTable;
-import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.Data;
 
 @Entity
 @Table(name = "situacoes_de_aprendizagem")
-@AllArgsConstructor
-@NoArgsConstructor
-@Getter
-@Setter
-@EqualsAndHashCode
-@ToString
+@Data
 public class SituacaoDeAprendizagem {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	
 	@ManyToOne
 	private PlanoDeEnsino planoDeEnsino;
 	
@@ -61,20 +51,13 @@ public class SituacaoDeAprendizagem {
 	@Enumerated(EnumType.STRING)
 	private EstrategiaDesafiadora estrategiaDesafiadora;
 	
-	@ManyToMany
-	@JoinTable(
-	        name = "situacoes_capacidades",
-	        joinColumns = @JoinColumn(name = "situacao_id"),
-	        inverseJoinColumns = @JoinColumn(name = "capacidade_id")
-	    )
-	private List<Capacidade> capacidades;
+	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+	private List<Capacidade> capacidadesTecnicas;
 	
-	@ManyToMany
-	@JoinTable(
-	        name = "situacoes_conhecimentos",
-	        joinColumns = @JoinColumn(name = "situacao_id"),
-	        inverseJoinColumns = @JoinColumn(name = "conhecimento_id")
-	    )
+	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+	private List<Capacidade> capacidadesSocioemocionais;
+	
+	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
 	private List<Conhecimento> conhecimentos;
 
 	public SituacaoDeAprendizagem(PlanoDeEnsino planoDeEnsino, String contexto, String desafio,
